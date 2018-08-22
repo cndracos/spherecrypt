@@ -5,11 +5,10 @@ from Point import Point
 from Vector import Vector
 
 
-def get_encrypted_string(difficulty, message_bytes, p, v):
+def get_encrypted_string(message_bytes, p, v):
     ba = bytearray()
     ByteUtilities.coordinate_byte_array(ba, p.x, p.y, p.z)
     ByteUtilities.coordinate_byte_array(ba, v.a, v.b, v.c)
-    ba.append(difficulty)
     ByteUtilities.byte_array_append(ba, message_bytes)
     return ''.join('{:02x}'.format(x) for x in ba)
 
@@ -25,4 +24,4 @@ def encrypt(message, difficulty):
     message_bytes = SphereCryptor.bounce_message(message_bytes, SphereCryptor.calc_next_point(p, v),
                                                  v.reflect(p), difficulty)
 
-    return get_encrypted_string(difficulty, message_bytes, p, v)
+    return get_encrypted_string(message_bytes, p, v)

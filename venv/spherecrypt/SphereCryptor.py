@@ -1,7 +1,6 @@
 import math
 import ByteUtilities
-from Point import *
-from Vector import Vector
+from Point import Point
 
 MULTIPLIER_SCALE = 2
 

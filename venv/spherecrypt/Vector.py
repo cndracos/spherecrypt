@@ -1,6 +1,3 @@
-from Point import Point
-
-
 class Vector:
     def __init__(self, a: float, b: float, c: float):
         self.a = a
