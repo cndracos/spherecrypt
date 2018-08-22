@@ -1,9 +1,8 @@
 from Point import Point
-from decimal import Decimal
 
 
 class Vector:
-    def __init__(self, a: Decimal, b: Decimal, c: Decimal):
+    def __init__(self, a: float, b: float, c: float):
         self.a = a
         self.b = b
         self.c = c
@@ -14,7 +13,7 @@ class Vector:
         return self
 
     def dot(self, other):
-        return self.a*other.x + self.b*other.y + self.c*other.z
+        return self.a * other.x + self.b * other.y + self.c * other.z
 
     def mutate(self, x, y, z, func):
         self.a = func(self.a, x)

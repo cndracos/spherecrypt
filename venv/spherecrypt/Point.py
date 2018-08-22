@@ -1,14 +1,8 @@
 import math
-from decimal import getcontext, Decimal
-
-
-def round_double(val):
-    getcontext().prec = 28
-    return Decimal(val)
 
 
 class Point:
-    def __init__(self, x: Decimal, y: Decimal, z: Decimal):
+    def __init__(self, x: float, y: float, z: float):
         self.x = x
         self.y = y
         self.z = z

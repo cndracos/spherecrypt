@@ -1,12 +1,10 @@
-import random
-from Point import *
+import Encryptor
+import Decryptor
+import SphereCryptor
+from Point import Point
 from Vector import Vector
-from SphereCryptor import SphereCryptor
-from Encryptor import Encryptor
-from Decryptor import Decryptor
-from ByteUtilities import *
 
-word = Encryptor.encrypt("hello", 222)
-decrypted: bytearray = Decryptor.decrypt(word)
-print(decrypted.decode(encoding="utf-8"))
-
+encrypted = Encryptor.encrypt("hello", 16)
+print(encrypted)
+decrypted = Decryptor.decrypt(encrypted)
+print(decrypted)
